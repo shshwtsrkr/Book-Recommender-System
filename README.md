@@ -4,3 +4,5 @@ This project is a book recommender system which uses two types of recommender sy
 
 1. Popularity Based Recommender (the homepage)
 2. Collaborative Based Recommender (recommend section)
+
+Link to the flask app - [link](https://book-recommender-system-py39.herokuapp.com/)
