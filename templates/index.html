@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang=""en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <style>
+        #det_block
+        {
+            color: white;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <nav class="navbar" style="background-color: rgb(215, 170, 113);">
+        <a class="navbar-brand">Book Recommender</a>
+        <ul class="nav navbar-nav">
+            <li><a>Home</a></li>
+            <li><a>Recommend</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Top 50 Books</h1>
+            </div>
+
+            {% for i in range(book_name | length) %}
+                <div class="col-md-3" style="margin-top: 50px;">
+                    <div class="card" style="background-color: rgb(0, 0, 0);">
+                        <div class="card-body">
+                            <div id="det_block">
+                                <img class="card-img-top" src="{{imgs[i]}}" width="320" height="320">
+                                <p>{{book_name[i]}}</p>
+                                <p>{{auth_name[i]}}</p>
+                                <p>{{votes[i]}}</p>
+                                <p>{{ratings[i]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</body></html>
