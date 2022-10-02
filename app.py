@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from titlecase import titlecase
 import pickle
 import numpy as np
 
@@ -25,7 +26,7 @@ def recommend_ui():
 
 @app.route('/recommend_books', methods=['post'])
 def recommend():
-    user_input = request.form.get('uip')
+    user_input = titlecase(request.form.get('uip').lower())
 
     #fetch the exact index of the book
     index_fetch = np.where(pt.index == user_input)[0][0]
