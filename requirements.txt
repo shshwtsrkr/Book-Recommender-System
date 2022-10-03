@@ -1,4 +1,5 @@
-flask
-numpy
+Flask==2.2.2
+numpy==1.23.3
+titlecase==2.4
 pandas
 gunicorn
