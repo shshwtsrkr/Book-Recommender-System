@@ -15,40 +15,50 @@
 </head>
 
 <body style="background-color: black;">
-    <nav class="navbar" style="background-color: rgb(215, 170, 113);">
-        <a class="navbar-brand">Book Recommender</a>
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-            <li><a>Contact</a></li>
-        </ul>
-    </nav>
 
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Book Recommendation System</span><br/>
+          <nav class="nav nav-pills flex-column flex-sm-row">
+            <a class="flex-sm-fill text-sm-center nav-link" href="/">Home 🏠</a>
+            <a class="flex-sm-fill text-sm-center nav-link active" href="/recommend">Recommend 📚</a>
+          </nav>
+        </div>
+      </nav>
+
+    
     <div class="container">
         <div class="row">
-            <div style="color: aliceblue;"col-md-12">
-                <h1>Recommendations</h1>
-                <form action="/recommend_books" method="POST">
-                    <input name="uip" type="text" class="form-control"><br>
-                    <input type="submit" class="btn btn-lg btn-warning">
+            <div style="color: aliceblue;" class="col-md-12">
+                <br/><br/><h1 class="d-flex justify-content-center" style="font-size: 30px; color: rgb(17, 103, 216);">Recommendations</h1><br/>
+                <form class="d-flex justify-content-center" action="/recommend_books" method="POST">
+                    <input name="uip" type="text" class="form-control">
+                    <input type="Submit" value=" Search 🔍" style="color: aliceblue; border-color:rgb(17, 103, 216); background-color:rgb(17, 103, 216);" class="btn btn-lg btn-warning">
                 </form>
             </div>
 
             {% if data %}
             {% for i in data %}
             <div class="col-md-3" style="margin-top: 50px;">
-                <div class="card" style="background-color: rgb(0, 0, 0);">
-                    <div class="card-body">
-                        <div id="det_block">
-                            <img class="card-img-top" src="{{i[2]}}" width="320" height="320">
-                            <p>{{i[0]}}</p>
-                            <p>{{i[1]}}</p>
-                        </div>
+                <div class="card h-100" style="background-color: rgb(49, 55, 57);">
+                    <div id="det_block" class="card-body">
+                        <img class="card-img-top"  src="{{i[2]}}" width="80" height="250">
+                        <p class="card-title fw-bold">{{i[0]}}</p>
+                        <p>✍️ {{i[1]}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-1" style="margin-top: 50px;">
+                <div class="card h-100" style="background-color: rgb(0, 0, 0);">
+                    <div id="det_block" class="card-body card-img-top">
+                            
                     </div>
                 </div>
             </div>
             {% endfor %}
             {% endif %}
+
 
         </div>
     </div>

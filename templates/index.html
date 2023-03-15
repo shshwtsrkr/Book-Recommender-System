@@ -13,32 +13,34 @@
     </style>
 </head>
 <body style="background-color: black;">
-    <nav class="navbar" style="background-color: rgb(215, 170, 113);">
-        <a class="navbar-brand">Book Recommender</a>
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-            <li><a>Contact</a></li>
-        </ul>
-    </nav>
+    
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Book Recommendation System</span><br/>
+          <nav class="nav nav-pills flex-column flex-sm-row">
+            <a class="flex-sm-fill text-sm-center nav-link active" href="/">Home 🏠</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="/recommend">Recommend 📚</a>
+          </nav>
+        </div>
+      </nav>
     
     <div class="container">
         <div class="row">
-            <div class="col-md-12" style="color: antiquewhite;">
-                <h1 >Top 50 Books</h1>
+            <div class="col-md-12" style="color: rgb(17, 103, 216);">
+                <br/>
+                <br/>
+                <h1 class="d-flex justify-content-center" style="font-size: 30px;">Top 50</h1>
             </div>
 
             {% for i in range(book_name | length) %}
                 <div class="col-md-3" style="margin-top: 50px;">
-                    <div class="card" style="background-color: rgb(0, 0, 0);">
-                        <div class="card-body">
-                            <div id="det_block">
-                                <img class="card-img-top" src="{{imgs[i]}}" width="200" height="280">
-                                <p>{{book_name[i]}}</p>
-                                <p>{{auth_name[i]}}</p>
-                                <p>{{votes[i]}}</p>
-                                <p>{{ratings[i]}}</p>
-                            </div>
+                    <div class="card h-100" style="background-color: rgb(29, 30, 31);">
+                        <div id="det_block" class="card-body">
+                                <img class="card-img-top" src="{{imgs[i]}}" width="70" height="250">
+                                <p class="card-title fw-bold">{{book_name[i]}}</p>
+                                <p>✍️ {{auth_name[i]}}</p>
+                                <p>🗳️ {{votes[i]}}</p>
+                                <p>⭐ {{ratings[i]}}</p>
                         </div>
                     </div>
                 </div>

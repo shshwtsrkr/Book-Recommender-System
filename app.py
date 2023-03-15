@@ -17,7 +17,7 @@ def index():
                            auth_name = (list(popular_df['Book-Author'].values)),
                            imgs      = (list(popular_df['Image-URL-M'].values)),
                            votes     = (list(popular_df['num_ratings'].values)),
-                           ratings   = (list(popular_df['avg_ratings'].values))
+                           ratings   = (list(popular_df['avg_ratings'].round(2).values))
                           )
 
 @app.route('/recommend')
@@ -47,4 +47,6 @@ def recommend():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.config['ENV'] = 'development'
+    app.config['DEBUG'] = True
+    app.config['TESTING'] = True
